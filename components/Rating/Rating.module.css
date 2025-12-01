@@ -1,0 +1,5 @@
+.filled {
+    fill: var(--primary);
+    margin-right: 5px;
+}
+
