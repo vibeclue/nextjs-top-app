@@ -5,18 +5,12 @@ import { useEffect, useState } from "react";
 // ФИГМА: https://www.figma.com/design/Cy3uqi4SSRfk89hLq85lbN/%D0%9A%D1%83%D1%80%D1%81-2---NextJS?node-id=1-2&t=lGdd2H9HOXI1SZRr-0
 export default function Home() {
 
-  const [counter, setCounter] = useState<number>(0);
-  
-
-    useEffect(() => {
-      console.log(`Состояние counter изменилось, теперь оно ${counter}`);
-    }, [counter]);
-
+  const [rating, setRating] = useState<number>(4);
 
   return (
     <>
-      <Htag tag='h1'>{counter}</Htag>
-      <Button appearance='primary' arrow='right' onClick={() => setCounter(counter+1)}>Кнопка</Button>
+      <Htag tag='h1'>Что-то</Htag>
+      <Button appearance='primary' arrow='right'>Кнопка</Button>
       <Button appearance='ghost' arrow='down'>Кнопка</Button>
       <Ptag size='s'>Малый: Тут хотелосб бы видеть очень мног отекста ванпаовоавк ак ваыва выа </Ptag>
       <Ptag size='m'>Средний: Тут хотелосб бы видеть очень мног отекста ванпаовоавк ак ваыва выа </Ptag>
@@ -28,7 +22,7 @@ export default function Home() {
       <Tag size='m' color='primary'>primary </Tag>
       <Tag size='m' color='red' href='https://www.npmjs.com/package/@svgr/webpack?activeTab=readme'>Ссылка</Tag>
 
-      <Rating  rating= {4} > </Rating>
+      <Rating  rating={rating} isEditable = {true} setRating={setRating} > </Rating>
     </>
   );
 }
