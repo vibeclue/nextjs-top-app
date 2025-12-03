@@ -21,14 +21,14 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="ru">
       <body className={notoSans.className}>
-        <Header />
-        <div>
-          <Sidebar />
-          <main>
+        <div className='wrapper'>
+          <Header className="header" />
+          <Sidebar className="sidebar"/>
+          <main className="main">
             {children}
           </main>
+          <Footer className="footer"/>
         </div>
-        <Footer />
       </body>
     </html>
   );

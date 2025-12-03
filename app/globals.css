@@ -7,6 +7,54 @@ html, body{
 	font-family: "Noto Sans", sans-serif;
 }
 
+.wrapper {
+	display: grid;
+	grid-template-columns: auto 230px minmax(320px, 1200px) auto;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+	grid-template-areas: 
+		". header header ."
+		". sidebar main ."
+		"footer footer footer footer";
+}
+
+.header {
+	grid-area: header;
+	display: none;
+}
+
+.sidebar {
+		grid-area: sidebar;
+}
+
+.main {
+		grid-area: main;
+}
+
+.footer {
+		grid-area: footer;
+}	
+
+
+@media (max-width: 765px) {
+	.wrapper {
+		grid-template-columns: minmax(320px, 1fr);
+		grid-template-areas: 
+			"header"
+			"main"
+			"footer";
+	}
+	.sidebar {
+		display: none;
+	}
+
+	.header {
+		display: block;
+	}
+
+}
+
+
 :root {
 	--black: #3B434E;
 	--gray-light: #EBEBEB;
@@ -18,4 +66,6 @@ html, body{
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans", sans-serif;
 }
+
+
 
